@@ -43,7 +43,6 @@ jobs:
           WIN_CSC_LINK: $(WIN_CSC_LINK)
           WIN_CSC_KEY_PASSWORD: $(WIN_CSC_KEY_PASSWORD)
           GH_TOKEN: $(GH_TOKEN)
-          NODE_ENV: production
   - job: macOS
     condition: "and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))"
     pool:
@@ -84,7 +83,6 @@ jobs:
           CSC_LINK: $(CSC_LINK)
           CSC_KEY_PASSWORD: $(CSC_KEY_PASSWORD)
           GH_TOKEN: $(GH_TOKEN)
-          NODE_ENV: production
       - bash: |
           mkdir -p "$AZURE_CACHE_FOLDER"
           tar -czf "$AZURE_CACHE_FOLDER/yarn-cache.tar.gz" "$YARN_CACHE_FOLDER"
@@ -135,7 +133,6 @@ jobs:
         displayName: Build
         env:
           GH_TOKEN: $(GH_TOKEN)
-          NODE_ENV: production
       - bash: |
           mkdir -p "$AZURE_CACHE_FOLDER"
           tar -czf "$AZURE_CACHE_FOLDER/yarn-cache.tar.gz" "$YARN_CACHE_FOLDER"
