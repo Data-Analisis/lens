@@ -37,8 +37,6 @@ jobs:
         displayName: Cache Yarn packages
       - script: make deps
         displayName: Install dependencies
-        env:
-          NODE_ENV: production
       - script: make build
         displayName: Build
         env:
@@ -74,8 +72,6 @@ jobs:
         condition: eq(variables.CACHE_RESTORED, 'true')
       - script: make deps
         displayName: Install dependencies
-        env:
-          NODE_ENV: production
       - script: make lint
         displayName: Lint
       - script: make test
@@ -121,8 +117,6 @@ jobs:
         condition: eq(variables.CACHE_RESTORED, 'true')
       - script: make deps
         displayName: Install dependencies
-        env:
-          NODE_ENV: production
       - script: make lint
         displayName: Lint
       - script: make test
